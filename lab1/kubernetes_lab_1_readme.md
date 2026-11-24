@@ -51,7 +51,7 @@ Before starting, ensure you have the following installed and running on your mac
    kubectl get nodes
    ```
 
-![Step 1: Cluster Creation and Node Verification](Screenshot%202026-11-13%20at%2010.10.40%E2%80%AFAM.jpg)
+![Step 1: Cluster Creation and Node Verification]
 
 ---
 
@@ -69,7 +69,7 @@ Before starting, ensure you have the following installed and running on your mac
    kubectl get pods -n kube-system
    ```
 
-![Step 2: Docker Containers and kube-system Pods](Screenshot%202026-11-13%20at%2010.11.57%E2%80%AFAM.jpg)
+![Step 2: Docker Containers and kube-system Pods]
 
 ---
 
@@ -107,7 +107,7 @@ Before starting, ensure you have the following installed and running on your mac
    kubectl get pods
    ```
 
-![Step 3: Deployment, Self-Healing, and Scaling Up](Screenshot%202026-11-13%20at%2010.26.39%E2%80%AFAM.jpg)
+![Step 3: Deployment, Self-Healing, and Scaling Up]
 
 ---
 
@@ -134,7 +134,7 @@ Before starting, ensure you have the following installed and running on your mac
 
    *(Press `Ctrl+C` when finished to stop port forwarding.)*
 
-![Step 4: Scaling Down and Port-Forwarding Service](Screenshot%202026-11-13%20at%2010.26.54%E2%80%AFAM.png)
+![Step 4: Scaling Down and Port-Forwarding Service]
 
 ---
 
