@@ -32,7 +32,7 @@ This lab explores how Kubernetes manages pods and services under the hood inside
    kubectl create deployment web --image=nginx --replicas=3
    ```
 
-![Step 1: Managing and Recreating the Web Deployment](1.jpg)
+![Step 1: Managing and Recreating the Web Deployment]
 
 ---
 
@@ -56,7 +56,7 @@ This lab explores how Kubernetes manages pods and services under the hood inside
    docker exec $NODE journalctl -u kubelet --no-pager | grep "web-" | tail -n 5
    ```
 
-![Step 2: Inspecting Node Pods and Containers with crictl](2.jpg)
+![Step 2: Inspecting Node Pods and Containers with crictl]
 
 ---
 
@@ -75,7 +75,7 @@ This lab explores how Kubernetes manages pods and services under the hood inside
    ```
    *(Notice how `iptables` uses `--mode random --probability` rules to distribute traffic across the three pod endpoints on port `80`.)*
 
-![Step 3: Inspecting Service EndpointSlices and iptables DNAT Rules](3.jpg)
+![Step 3: Inspecting Service EndpointSlices and iptables DNAT Rules]
 
 ---
 
@@ -109,4 +109,4 @@ This lab explores how Kubernetes manages pods and services under the hood inside
    kubectl delete deployment web
    ```
 
-![Step 4: Testing Optimistic Concurrency and Cleaning Up Resources](4.jpg)
+![Step 4: Testing Optimistic Concurrency and Cleaning Up Resources]
