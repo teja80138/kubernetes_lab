@@ -26,7 +26,7 @@ This lab explores how the Kubernetes scheduler (`kube-scheduler`) makes placemen
    git clone --depth 1 --branch v1.37.0 --filter=blob:none --sparse https://github.com/kubernetes/kubernetes.git k8s-src
    ```
 
-   ![Cluster Context and Sparse Clone](1_2.jpg)
+   ![Cluster Context and Sparse Clone]
 
 3. Navigate into `k8s-src` and configure `git sparse-checkout` to fetch only the scheduler packages:
 
@@ -35,7 +35,7 @@ This lab explores how the Kubernetes scheduler (`kube-scheduler`) makes placemen
    git sparse-checkout set pkg/scheduler staging/src/k8s.io/kube-scheduler
    ```
 
-   ![Sparse Checkout Scheduler Packages](2.png)
+   ![Sparse Checkout Scheduler Packages]
 
 ## Step 2: Inspect Default Scheduler Plugins & Scheduling Cycle Source Code
 
@@ -47,7 +47,7 @@ This lab explores how the Kubernetes scheduler (`kube-scheduler`) makes placemen
    grep -n "Name: names" pkg/scheduler/apis/config/v1/default_plugins.go
    ```
 
-   ![Inspect Default Scheduler Plugins](3_2.jpg)
+   ![Inspect Default Scheduler Plugins]
 
 2. Search across `pkg/scheduler/framework/plugins` for all `Filter` and `Score` plugin method implementations:
 
@@ -55,7 +55,7 @@ This lab explores how the Kubernetes scheduler (`kube-scheduler`) makes placemen
    grep -rnE --include="*.go" --exclude="*_test.go" "^func \(.*\) (Filter|Score)\(" pkg/scheduler/framework/plugins
    ```
 
-   ![Search Filter and Score Plugin Methods](4_2.jpg)
+   ![Search Filter and Score Plugin Methods]
 
 3. Locate the core scheduling and binding cycle entry points inside `pkg/scheduler/schedule_one.go`:
 
@@ -63,7 +63,7 @@ This lab explores how the Kubernetes scheduler (`kube-scheduler`) makes placemen
    grep -nE "^func .*(ScheduleOne|schedulingCycle|bindingCycle|schedulePod|findNodesThatFitPod|prioritizeNodes)\(" pkg/scheduler/schedule_one.go
    ```
 
-   ![Locate Core Scheduling Cycle Entry Points](5.jpg)
+   ![Locate Core Scheduling Cycle Entry Points]
 
 ## Step 3: Test Unschedulable CPU Resource Requests (`big.yaml`)
 
@@ -99,11 +99,11 @@ This lab explores how the Kubernetes scheduler (`kube-scheduler`) makes placemen
    kubectl describe pod big
    ```
 
-   ![Pod Big Pending Status](6.png)
+   ![Pod Big Pending Status]
 
    *(Notice the `FailedScheduling` event: `0/3 nodes are available: 1 node(s) had untolerated taint(s), 2 Insufficient cpu`.)*
 
-   ![Pod Big FailedScheduling Event](7.png)
+   ![Pod Big FailedScheduling Event]
 
 ## Step 4: Test `nodeSelector` & Node Labeling (`ssd.yaml`)
 
@@ -142,7 +142,7 @@ This lab explores how the Kubernetes scheduler (`kube-scheduler`) makes placemen
    grep -n "didn't match" "$NODE_AFFINITY_FILE"
    ```
 
-   ![Node Label and NodeAffinity Source Check](8.jpg)
+   ![Node Label and NodeAffinity Source Check]
 
 ## Step 5: Test Taints, Tolerations, & `hostPort` Scheduling
 
@@ -163,7 +163,7 @@ This lab explores how the Kubernetes scheduler (`kube-scheduler`) makes placemen
    kubectl apply -f hostport.yaml
    ```
 
-   ![Taints, Tolerations, and HostPort Deployment](9.jpg)
+   ![Taints, Tolerations, and HostPort Deployment]
 
 ## Step 6: Test Cordoned/Unschedulable Nodes (`closed`) & Clean Up
 
@@ -179,5 +179,5 @@ This lab explores how the Kubernetes scheduler (`kube-scheduler`) makes placemen
    kubectl get pods
    ```
 
-   ![Unschedulable Nodes and Cleanup](11.jpg)
-   ![Unschedulable Nodes and Cleanup Copy](11_2.jpg)
+   ![Unschedulable Nodes and Cleanup]
+   ![Unschedulable Nodes and Cleanup Copy]
