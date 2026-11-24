@@ -45,7 +45,7 @@ kubectl get configmap welcome -n team-a -o yaml
 ### Expected Output:
 The ConfigMap `welcome` should exist in `team-a` with the message: `Welcome to team-a - managed by KLU controller`.
 
-![Step 2 - Creating and verifying team-a ConfigMap](./Screenshot%202026-11-24%20at%2010.24.33%E2%80%AFAM.png)
+![Step 2 - Creating and verifying team-a ConfigMap]
 
 ---
 
@@ -81,7 +81,7 @@ kubectl label namespace team-a klu.edu/managed-
 kubectl get configmap welcome -n team-a
 ```
 
-![Step 3 & 4 - Self-healing, multi-namespace creation, and unlabeling](./Screenshot%202026-11-24%20at%2010.25.18%E2%80%AFAM.png)
+![Step 3 & 4 - Self-healing, multi-namespace creation, and unlabeling]
 
 ---
 
@@ -96,7 +96,7 @@ created ConfigMap welcome in namespace team-a
 created ConfigMap welcome in namespace team-b
 ```
 
-![Step 5 - Controller reconciliation logs](./Screenshot%202026-11-24%20at%2010.27.40%E2%80%AFAM.png)
+![Step 5 - Controller reconciliation logs]
 
 ---
 
