@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spread
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: spread
+  template:
+    metadata:
+      labels:
+        app: spread
+    spec:
+      tolerations:
+      - key: exam
+        operator: Equal
+        value: running
+        effect: NoSchedule
+      containers:
+      - name: nginx
+        image: nginx:1.27
+
